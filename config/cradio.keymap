@@ -8,13 +8,12 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-
-&mt {
-    tapping_term_ms = <150>;
-    flavor = "tap-preferred";
-};
-
 / {
+    &mt {
+        tapping_term_ms = <150>;
+        flavor = "tap-preferred";
+    };
+
     &caps_word {
         continue-list = <UNDERSCORE MINUS>;
     };
@@ -36,26 +35,17 @@
         combo_copy {
             timeout-ms = <30>;
             key-positions = <20 22>;
-            bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tab &kp c>
-                     , <&macro_release &kp LCTRL>
-                     ;
+            bindings = <&mt LCTRL c>;
         };
         combo_cut {
             timeout-ms = <30>;
             key-positions = <20 21>;
-            bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tab &kp x>
-                     , <&macro_release &kp LCTRL>
-                     ;
+            bindings = <&mt LCTRL x>;
         };
         combo_paste {
             timeout-ms = <30>;
             key-positions = <21 22>;
-            bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tab &kp v>
-                     , <&macro_release &kp LCTRL>
-                     ;
+            bindings = <&mt LCTRL v>;
         };
         combo_tab {
             timeout-ms = <30>;
