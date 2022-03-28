@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 &mt {
     tapping_term_ms = <150>;
@@ -27,6 +28,7 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <5 6 7 8 9  15 16 17 18 19  25 26 27 28 29  30 31 32 33>;    // <---[[right-hand keys + thumbs]]
         };
     };
 
@@ -35,26 +37,17 @@
         combo_copy {
             timeout-ms = <30>;
             key-positions = <20 22>;
-            bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tap &kp c>
-                     , <&macro_release &kp LCTRL>
-                     ;
+            bindings = <&kp LC(C)>;
         };
         combo_cut {
             timeout-ms = <30>;
             key-positions = <20 21>;
-            bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tap &kp x>
-                     , <&macro_release &kp LCTRL>
-                     ;
+            bindings = <&kp LC(X)>;
         };
         combo_paste {
             timeout-ms = <30>;
             key-positions = <21 22>;
-            bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tap &kp v>
-                     , <&macro_release &kp LCTRL>
-                     ;
+            bindings = <&kp LC(V)>;
         };
         combo_tab {
             timeout-ms = <30>;
@@ -133,22 +126,21 @@
 
     keymap {
         compatible = "zmk,keymap";
-
         L_QWERTY {
             bindings = <
             &kp Q       &kp W       &kp E         &kp R       &kp T             &kp Y &kp U       &kp I       &kp O       &kp P
-            &hm LALT A  &hm LGUI S  &hm LSHIFT D  &hm LCTRL F &kp G             &kp H &hm RCTRL J &hm RSFT K  &hm RGUI L  &hm LALT SEMICOLON
-            &kp Z       &kp X       &kp C         &hm RALT V  &kp B             &kp N &hm RALT M  &kp CMMA    &kp DOT     &kp SLASH
+            &hm LALT A  &hm LGUI S  &hm LSHIFT D  &hm LCTRL F &kp G             &kp H &hm RCTRL J &hm RSHFT K  &hm RGUI L  &hm LALT SEMICOLON
+            &kp Z       &kp X       &kp C         &hm RALT V  &kp B             &kp N &hm RALT M  &kp COMMA    &kp DOT     &kp SLASH
                                     &mo L_FKEYS   &lt L_NUMSYM SPC              &lt L_NAV BSPC    &mo L_BLE
             >;
         };
 
         L_NUMSYM {
             bindings = <
-            &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
-            &kp LPAR  &kp LBKT  &kp RBKT  &kp RPAR  &none                       &kb MINUS &kp N4    &kp N5    &kp N6    &kp PLUS
-            &kp LBRC  &kp LT    &kp GT    &kp RBRC  &none                       &kp DOT   &kp N1    &kp N2    &kp N3    &kp SLASH
-                                              &none &none                       &kp N0    &none
+            &kp N1      &kp N2      &kp N3        &kp N4      &kp N5          &kp N6      &kp N7       &kp N8       &kp N9       &kp N0
+            &kp LPAR    &kp LBKT    &kp RBKT      &kp RPAR    &none           &kp MINUS   &kp N4       &kp N5       &kp N6       &kp PLUS
+            &kp LBRC    &kp LT      &kp GT        &kp RBRC    &none           &kp DOT     &kp N1       &kp N2       &kp N3       &kp SLASH
+                                                  &none       &none           &kp N0      &none
             >;
         };
 
@@ -156,7 +148,7 @@
             bindings = <
             &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT       &kp CARET   &kp AMPS    &kp ASTRK   &none       &none
             &none     &none   &none     &none       &none           &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
-            &none     &none   &none     &none       &none           &kp HOME    &kp PH_DN   &kp PN_UP   &kp END     &none
+            &none     &none   &none     &none       &none           &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &none
                                         &none       &none           &none       &none
             >;
         };
