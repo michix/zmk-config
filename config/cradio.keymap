@@ -129,7 +129,7 @@
         L_QWERTY {
             bindings = <
             &kp Q       &kp W       &kp E         &kp R       &kp T             &kp Y &kp U       &kp I       &kp O       &kp P
-            &hm LALT A  &hm LGUI S  &hm LSHIFT D  &hm LCTRL F &kp G             &hm H &hm RCTRL J &hm RSFT K  &hm RGUI L  &hm LALT QUOT
+            &hm LALT A  &hm LGUI S  &hm LSHIFT D  &hm LCTRL F &kp G             &kp H &hm RCTRL J &hm RSFT K  &hm RGUI L  &hm LALT QUOT
             &mt LSFT Z  &kp X       &kp C         &hm RALT V  &kp B             &kp N &hm RALT M  &kp CMMA    &kp DOT     &mt LSFT RET
                                     &mo L_FKEYS   &lt L_NUMSYM SPC              &lt L_NAV BSPC    &mo L_BLE
             >;
