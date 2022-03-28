@@ -38,7 +38,7 @@
             timeout-ms = <30>;
             key-positions = <20 22>;
             bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tab &kp c>
+                     , <&macro_tap &kp c>
                      , <&macro_release &kp LCTRL>
                      ;
         };
@@ -46,7 +46,7 @@
             timeout-ms = <30>;
             key-positions = <20 21>;
             bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tab &kp x>
+                     , <&macro_tap &kp x>
                      , <&macro_release &kp LCTRL>
                      ;
         };
@@ -54,7 +54,7 @@
             timeout-ms = <30>;
             key-positions = <21 22>;
             bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tab &kp v>
+                     , <&macro_tap &kp v>
                      , <&macro_release &kp LCTRL>
                      ;
         };
