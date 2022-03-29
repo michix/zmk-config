@@ -64,6 +64,11 @@
             key-positions = <1 2 3>;
             bindings = <&kp ESC>;
         };
+        combo_layer_reset {
+            timeout-ms = <30>;
+            key-positions = <0 1 2 3>;
+            bindings = <&to L_QWERTY>;
+        };
         combo_minus {
             timeout-ms = <30>;
             key-positions = <6 7>;
