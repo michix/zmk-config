@@ -26,14 +26,23 @@
 
 / {
     behaviors {
-        hm: homerow_mods {
+        hml: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
+            label = "HOMEROW_MODS_LEFT";
             tapping-term-ms = <150>;
             quick-tap-ms = <0>;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
+        };
+        hmr: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_RIGHT";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
         };
     };
 
@@ -169,8 +178,8 @@
         0_querty {
             bindings = <
             &kp Q       &kp W       &kp E         &kp R       &kp T             &kp Y &kp U       &kp I       &kp O       &kp P
-            &hm LALT A  &hm LGUI S  &hm LSHIFT D  &hm LCTRL F &kp G             &kp H &hm RCTRL J &hm RSHFT K  &hm RGUI L  &hm LALT SEMICOLON
-            &kp Z       &kp X       &kp C         &hm RALT V  &kp B             &kp N &hm RALT M  &kp COMMA    &kp DOT     &kp SLASH
+            &hml LALT A &hml LGUI S &hml LSHIFT D &hml LCTRL F &kp G            &kp H &hmr RCTRL J &hmr RSHFT K  &hmr RGUI L  &hmr LALT SEMICOLON
+            &kp Z       &kp X       &kp C         &hml RALT V &kp B             &kp N &hmr RALT M  &kp COMMA    &kp DOT     &kp SLASH
                                     &lt L_FKEYS SPC  &lt L_NUMSYM SPC           &lt L_NAV BSPC    &lt L_BLE BSPC
             >;
         };
