@@ -65,6 +65,11 @@
             key-positions = <1 2 3>;
             bindings = <&kp ESC>;
         };
+        combo_minus {
+            timeout-ms = <30>;
+            key-positions = <6 7>;
+            bindings = <&kp MINUS>;
+        };
         combo_equals {
             timeout-ms = <30>;
             key-positions = <7 8>;
