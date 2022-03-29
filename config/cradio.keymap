@@ -17,7 +17,7 @@
 
 &mt {
     tapping_term_ms = <150>;
-    flavor = "balanced";
+    flavor = "tap-preferred";
 };
 
 &caps_word {
@@ -64,10 +64,25 @@
             key-positions = <1 2 3>;
             bindings = <&kp ESC>;
         };
-        combo_layer_reset {
+        combo_reset_left {
             timeout-ms = <30>;
             key-positions = <0 1 2 3>;
-            bindings = <&to L_QWERTY>;
+            bindings = <&reset>;
+        };
+        combo_bootloader_left {
+            timeout-ms = <30>;
+            key-positions = <20 21 22 23>;
+            bindings = <&bootloader>;
+        };
+        combo_reset_right {
+            timeout-ms = <30>;
+            key-positions = <6 7 8 9>;
+            bindings = <&reset>;
+        };
+        combo_bootloader_right {
+            timeout-ms = <30>;
+            key-positions = <26 27 28 29>;
+            bindings = <&reset>;
         };
         combo_minus {
             timeout-ms = <30>;
