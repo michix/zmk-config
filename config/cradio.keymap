@@ -9,6 +9,12 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#define L_QWERTY 0
+#define L_NUMSYM 1
+#define L_NAV 2
+#define L_FKEYS 3
+#define L_BLE 4
+
 &mt {
     tapping_term_ms = <150>;
     flavor = "tap-preferred";
@@ -126,7 +132,7 @@
 
     keymap {
         compatible = "zmk,keymap";
-        L_QWERTY {
+        0_querty {
             bindings = <
             &kp Q       &kp W       &kp E         &kp R       &kp T             &kp Y &kp U       &kp I       &kp O       &kp P
             &hm LALT A  &hm LGUI S  &hm LSHIFT D  &hm LCTRL F &kp G             &kp H &hm RCTRL J &hm RSHFT K  &hm RGUI L  &hm LALT SEMICOLON
@@ -135,7 +141,7 @@
             >;
         };
 
-        L_NUMSYM {
+        1_numsym {
             bindings = <
             &kp N1      &kp N2      &kp N3        &kp N4      &kp N5          &kp N6      &kp N7       &kp N8       &kp N9       &kp N0
             &kp LPAR    &kp LBKT    &kp RBKT      &kp RPAR    &none           &kp MINUS   &kp N4       &kp N5       &kp N6       &kp PLUS
@@ -144,7 +150,7 @@
             >;
         };
 
-        L_NAV {
+        2_nav {
             bindings = <
             &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT       &kp CARET   &kp AMPS    &kp ASTRK   &none       &none
             &none     &none   &none     &none       &none           &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
@@ -153,7 +159,7 @@
             >;
         };
 
-        L_FKEYS {
+        3_fkeys {
             bindings = <
             &none   &none   &none   &none   &none                    &none &kp F7   &kp F8  &kp F9  &kp F12
             &none   &none   &none   &none   &none                    &none &kp F4   &kp F5  &kp F8  &kp F11
@@ -162,7 +168,7 @@
             >;
         };
 
-        L_BLE {
+        4_ble {
             bindings = <
             &none           &none           &none           &none           &bt BT_CLR      &none   &none   &none   &none   &none
             &bt BT_SEL 4    &bt BT_SEL 3    &bt BT_SEL 2    &bt BT_SEL 1    &bt BT_SEL 0    &none   &none   &none   &none   &none
