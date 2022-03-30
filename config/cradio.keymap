@@ -20,6 +20,11 @@
     flavor = "tap-preferred";
 };
 
+&lt {
+    tapping_term_ms = <150>;
+    flavor = "tap-preferred";
+};
+
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
 };
@@ -42,7 +47,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <130>;
             quick-tap-ms = <0>;
-            flavor = "hold-preferred";
+            flavor = "hold-preferred"
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
         };
@@ -179,46 +184,46 @@
         compatible = "zmk,keymap";
         0_querty {
             bindings = <
-            &kp Q       &kp W       &kp E         &kp R       &kp T             &kp Y &kp U       &kp I       &kp O       &kp P
-            &hml LALT A &hml LGUI S &hml LSHIFT D &hml LCTRL F &kp G            &kp H &hmr RCTRL J &hmr RSHFT K  &hmr RGUI L  &hmr LALT SEMICOLON
-            &kp Z       &kp X       &kp C         &hml RALT V &kp B             &kp N &hmr RALT M  &kp COMMA    &kp DOT     &kp SLASH
-                                    &lt L_FKEYS SPC  &lt L_NUMSYM SPC           &lt L_NAV BSPC    &lt L_BLE BSPC
+    &kp Q       &kp W       &kp E           &kp R           &kp T       &kp Y   &kp U           &kp I           &kp O       &kp P
+    &hml LALT A &hml LGUI S &hml LSHIFT D   &hml LCTRL F    &kp G       &kp H   &hmr RCTRL J    &hmr RSHFT 5    &hmr RGUI L &hmr LALT SEMICOLON
+    &kp Z       &kp X       &kp C           &hml RALT V     &kp B       &kp N   &hmr RALT M     &kp COMMA       &kp DOT     &kp SLASH
+                            &lt L_FKEYS SPC  &lt L_NUMSYM SPC           &lt L_NAV BSPC  &lt L_BLE BSPC
             >;
         };
 
         1_numsym {
             bindings = <
-            &kp N1      &kp N2      &kp N3        &kp N4      &kp N5          &kp N6      &kp N7       &kp N8       &kp N9       &kp N0
-            &kp LPAR    &kp LBKT    &kp RBKT      &kp RPAR    &none           &kp MINUS   &kp N4       &kp N5       &kp N6       &kp PLUS
-            &kp LBRC    &kp LT      &kp GT        &kp RBRC    &none           &kp DOT     &kp N1       &kp N2       &kp N3       &kp SLASH
-                                                  &none       &none           &kp N0      &none
+    &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &kp N6      &kp N7       &kp N8     &kp N9      &kp N0
+    &kp LPAR    &kp LBKT    &kp RBKT    &kp RPAR    &none           &kp MINUS   &kp N4       &kp N5     &kp N6      &kp PLUS
+    &kp LBRC    &kp LT      &kp GT      &kp RBRC    &none           &kp DOT     &kp N1       &kp N2     &kp N3      &kp SLASH
+                                        &none       &none           &kp N0      &none
             >;
         };
 
         2_nav {
             bindings = <
-            &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT       &kp CARET   &kp AMPS    &kp ASTRK   &none       &none
-            &none     &none   &none     &none       &none           &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
-            &none     &none   &none     &none       &none           &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &none
+    &kp EXCL    &kp AT      &kp HASH    &kp DOLLAR  &kp PRCNT       &kp CARET   &kp AMPS    &kp ASTRK   &none       &none
+    &none       &none       &none       &none       &none           &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
+    &none       &none       &none       &none       &none           &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &none
                                         &none       &none           &none       &none
             >;
         };
 
         3_fkeys {
             bindings = <
-            &none   &none   &none   &none   &reset                   &none &kp F7   &kp F8  &kp F9  &kp F12
-            &none   &none   &none   &none   &bootloader              &none &kp F4   &kp F5  &kp F8  &kp F11
-            &none   &none   &none   &none   &none                    &none &kp F1   &kp F2  &kp F3  &kp F10
-                                    &none   &none                    &none &none
+    &none       &none       &none       &none       &reset          &none   &kp F7  &kp F8  &kp F9  &kp F12
+    &none       &none       &none       &none       &bootloader     &none   &kp F4  &kp F5  &kp F8  &kp F11
+    &none       &none       &none       &none       &none           &none   &kp F1  &kp F2  &kp F3  &kp F10
+                                        &none       &none           &none   &none
             >;
         };
 
         4_ble {
             bindings = <
-            &none           &none           &none           &none           &bt BT_CLR      &reset        &none   &none   &none   &none
-            &bt BT_SEL 4    &bt BT_SEL 3    &bt BT_SEL 2    &bt BT_SEL 1    &bt BT_SEL 0    &bootloader   &none   &none   &none   &none
-            &none           &none           &none           &out OUT_USB    &none           &none         &none   &none   &none   &none
-                                                            &none           &none           &none         &none
+    &none           &none           &none           &none           &bt BT_CLR      &reset        &none   &none   &none   &none
+    &bt BT_SEL 4    &bt BT_SEL 3    &bt BT_SEL 2    &bt BT_SEL 1    &bt BT_SEL 0    &bootloader   &none   &none   &none   &none
+    &none           &none           &none           &out OUT_USB    &none           &none         &none   &none   &none   &none
+                                                    &none           &none           &none         &none
             >;
         };
 
