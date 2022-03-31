@@ -23,6 +23,7 @@
 &lt {
     tapping_term_ms = <150>;
     flavor = "tap-preferred";
+    quick-tap-ms = <150>;
 };
 
 &caps_word {
