@@ -144,7 +144,7 @@
         combo_pipe {
             timeout-ms = <30>;
             key-positions = <26 27 28>;
-            bindings = <&kp PIPE2>;
+            bindings = <&kp PIPE>;
         };
         combo_backslash {
             timeout-ms = <30>;
