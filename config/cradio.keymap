@@ -170,7 +170,7 @@
         combo_fkeys {
             timeout-ms = <30>;
             key-positions = <20 21 22>;
-            bindings = <&mo L_FKEYS>;
+            bindings = <&sl L_FKEYS>;
         };
     };
 
