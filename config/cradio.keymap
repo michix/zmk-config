@@ -197,7 +197,7 @@
 
         1_numsym {
             bindings = <
-    &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &kp N6      &kp N7       &kp N8     &kp N9      &kp N0
+    &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &kp COMMA   &kp N7       &kp N8     &kp N9      &kp N0
     &kp LPAR    &kp LBKT    &kp RBKT    &kp RPAR    &none           &kp MINUS   &kp N4       &kp N5     &kp N6      &kp PLUS
     &kp LBRC    &kp LT      &kp GT      &kp RBRC    &none           &kp DOT     &kp N1       &kp N2     &kp N3      &kp SLASH
                                         &none       &none           &kp N0      &none
