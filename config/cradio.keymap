@@ -49,7 +49,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_LEFT_SHIFT";
             #binding-cells = <2>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <80>;
             quick-tap-ms = <100>;
             global-quick-tap;
             flavor = "hold-preferred";
@@ -71,7 +71,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_RIGHT_SHIFT";
             #binding-cells = <2>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <80>;
             quick-tap-ms = <100>;
             global-quick-tap;
             flavor = "hold-preferred";
@@ -212,8 +212,8 @@
         0_querty {
             bindings = <
     &lt L_MM Q       &kp W       &kp E           &kp R           &kp T       &kp Y   &kp U           &kp I           &kp O       &kp P
-    &hml LALT A &hmls LGUI S &hml LSHIFT D   &hml LCTRL F    &kp G       &kp H   &hmr RCTRL J    &hmrs RSHFT K    &hmr RGUI L &hmr LALT SEMICOLON
-    &kp Z       &kp X       &kp C           &hml RALT V     &kp B       &kp N   &hmr RALT M     &kp COMMA       &kp DOT     &kp SLASH
+    &hml LALT A &hml LGUI S &hmls LSHIFT D   &hml LCTRL F    &kp G       &kp H   &hmr RCTRL J    &hmrs RSHFT K    &hmr RGUI L &hmr LALT SEMICOLON
+    &kp Z       &kp X       &kp C           &hmls RALT V     &kp B       &kp N   &hmrs RALT M     &kp COMMA       &kp DOT     &kp SLASH
                             &lt L_FKEYS SPC  &lt L_NUMSYM SPC           &lt L_NAV BSPC  &lt L_BLE BSPC
             >;
         };
