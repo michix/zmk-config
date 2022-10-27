@@ -119,15 +119,20 @@
             key-positions = <21 22>;
             bindings = <&kp LC(V)>;
         };
+        combo_tab {
+            timeout-ms = <30>;
+            key-positions = <1 3>;
+            bindings = <&kp TAB>;
+        };
         combo_alt_tab {
             timeout-ms = <30>;
             key-positions = <0 3>;
             bindings = <&kp LA(TAB)>;
         };
-        combo_tab {
+        combo_ctrl_tab {
             timeout-ms = <30>;
-            key-positions = <1 3>;
-            bindings = <&kp TAB>;
+            key-positions = <6 9>;
+            bindings = <&kp LC(TAB)>;
         };
         combo_esc {
             timeout-ms = <30>;
