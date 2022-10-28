@@ -61,7 +61,7 @@
             label = "HOMEROW_MODS_LEFT_ALTGR";
             #binding-cells = <2>;
             tapping-term-ms = <120>;
-            quick-tap-ms = <100>;
+            quick-tap-ms = <120>;
             global-quick-tap;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
@@ -94,7 +94,7 @@
             label = "HOMEROW_MODS_RIGHT_ALTGR";
             #binding-cells = <2>;
             tapping-term-ms = <120>;
-            quick-tap-ms = <100>;
+            quick-tap-ms = <120>;
             global-quick-tap;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
