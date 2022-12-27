@@ -107,12 +107,12 @@
         combo_sticky_shift_left {
             timeout-ms = <30>;
             key-positions = <11 12>;
-            bindings = <&kp &sk LSHIFT>;
+            bindings = <&sk LSHIFT>;
         };
         combo_sticky_shift_right {
             timeout-ms = <30>;
             key-positions = <17 18>;
-            bindings = <&kp &sk RSHIFT>;
+            bindings = <&sk RSHIFT>;
         };
         combo_copy {
             timeout-ms = <30>;
