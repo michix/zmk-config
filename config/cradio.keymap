@@ -112,22 +112,22 @@
         compatible = "zmk,combos";
         combo_sticky_shift_left {
             timeout-ms = <30>;
-            key-positions = <12 13>;
+            key-positions = <11 12>;
             bindings = <&sk LSHIFT>;
         };
         combo_sticky_shift_right {
             timeout-ms = <30>;
-            key-positions = <16 17>;
+            key-positions = <17 18>;
             bindings = <&sk RSHIFT>;
         };
         combo_sticky_altgr_left {
             timeout-ms = <30>;
-            key-positions = <11 12>;
+            key-positions = <10 11>;
             bindings = <&sk RALT>;
         };
         combo_sticky_altggr_right {
             timeout-ms = <30>;
-            key-positions = <17 18>;
+            key-positions = <18 19>;
             bindings = <&sk RALT>;
         };
         combo_copy {
