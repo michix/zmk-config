@@ -157,7 +157,7 @@
         combo_reset_left {
             timeout-ms = <30>;
             key-positions = <0 1 2 3>;
-            bindings = <&reset>;
+            bindings = <&sys_reset>;
         };
         /*combo_bootloader_left {*/
             /*timeout-ms = <30>;*/
@@ -167,7 +167,7 @@
         combo_reset_right {
             timeout-ms = <30>;
             key-positions = <6 7 8 9>;
-            bindings = <&reset>;
+            bindings = <&sys_reset>;
         };
         /*combo_bootloader_right {*/
             /*timeout-ms = <30>;*/
@@ -285,7 +285,7 @@
 
         3_fkeys {
             bindings = <
-    &none       &none       &none       &none       &reset          &none   &kp F7  &kp F8  &kp F9  &kp F12
+    &none       &none       &none       &none       &sys_reset          &none   &kp F7  &kp F8  &kp F9  &kp F12
     &sk LEFT_ALT &sk LEFT_GUI &sk LEFT_SHIFT &sk LEFT_CONTROL &bootloader   &none   &kp F4  &kp F5  &kp F8  &kp F11
     &none       &none       &none       &none       &none           &none   &kp F1  &kp F2  &kp F3  &kp F10
                                         &none       &none           &none   &none
@@ -294,7 +294,7 @@
 
         4_ble {
             bindings = <
-    &kp C_MUTE      &none           &kp C_VOL_DN    &kp C_VOL_UP    &bt BT_CLR      &reset        &none   &none   &none   &none
+    &kp C_MUTE      &none           &kp C_VOL_DN    &kp C_VOL_UP    &bt BT_CLR      &sys_reset        &none   &none   &none   &none
     &bt BT_SEL 4    &bt BT_SEL 3    &bt BT_SEL 2    &bt BT_SEL 1    &bt BT_SEL 0    &bootloader   &none   &none   &none   &none
     &none           &none           &none           &out OUT_USB    &none           &none         &none   &none   &none   &none
                                                     &none           &none           &none         &none
