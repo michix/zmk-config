@@ -7,5 +7,5 @@ requires: [pro_micro]
 features:
   - keys
 siblings:
-  - a_dux_left
-  - a_dux_right
+  - ika_left
+  - ika_right
