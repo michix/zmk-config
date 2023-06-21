@@ -1,0 +1,11 @@
+file_format: "1"
+id: ika
+name: Ika
+type: shield
+url: https://github.com/filterpaper/split34/tree/main/Ika
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - a_dux_left
+  - a_dux_right
