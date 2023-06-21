@@ -62,6 +62,8 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+      - name: Copy Shield-Definition
+        run: cp -r app/boards/shields/ika zmk/app/boards/shields/
       - name: West Init
         run: west init -l config
       - name: West Update
