@@ -3,7 +3,7 @@ id: ika
 name: Ika
 type: shield
 url: https://github.com/filterpaper/split34/tree/main/Ika
-requires: [nice_nano_2]
+requires: [pro_micro]
 features:
   - keys
 siblings:
