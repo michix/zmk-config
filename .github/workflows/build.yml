@@ -1,49 +1,34 @@
-on: [push, pull_request, workflow_dispatch]
-
 name: Build
 
+env:
+  config-path: config
+
+on:
+  push:
+    paths:
+      - ".github/workflows/build.yml"
+      - "config/**"
+  pull_request:
+    paths:
+      - ".github/workflows/build.yml"
+      - "config/**"
+  workflow_dispatch:
+
 jobs:
-  matrix:
-    runs-on: ubuntu-latest
-    name: Fetch Build Keyboards
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install yaml2json
-        run: python3 -m pip install remarshal
-      - id: set-matrix
-        name: Fetch Build Matrix
-        run: |
-          matrix=$(yaml2json build.yaml | jq -c .)
-          yaml2json build.yaml
-          echo "::set-output name=matrix::${matrix}"
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     container:
-      image: zmkfirmware/zmk-build-arm:stable
-    needs: matrix
-    name: Build
+      image: zmkfirmware/zmk-build-arm:3.2-branch-20230422022718-3.2.0-0.15.2-76376c9148ed-4770437526
     strategy:
       fail-fast: false
-      matrix: ${{fromJson(needs.matrix.outputs.matrix)}}
+      matrix:
+        # List the firmware to build here. Each item use the following properties.
+        #  board: (required) the board to build.
+        #  shield: (optional) the shield to build. Omit for a standalone board.
+        #  cmake-args: (optional) extra arguments to pass to CMake as a string.
+        include:
+          - board: le_chiff_ble
     steps:
-      - name: Prepare variables
-        id: variables
-        run: |
-          if [ -n "${{ matrix.shield }}" ]; then
-            EXTRA_CMAKE_ARGS="-DSHIELD=${{ matrix.shield }}"
-            ARTIFACT_NAME="${{ matrix.shield }}-${{ matrix.board }}-zmk"
-            DISPLAY_NAME="${{ matrix.shield }} - ${{ matrix.board }}"
-          else
-            EXTRA_CMAKE_ARGS=
-            DISPLAY_NAME="${{ matrix.board }}"
-            ARTIFACT_NAME="${{ matrix.board }}-zmk"
-          fi
-          echo ::set-output name=extra-cmake-args::${EXTRA_CMAKE_ARGS}
-          echo ::set-output name=artifact-name::${ARTIFACT_NAME}
-          echo ::set-output name=display-name::${DISPLAY_NAME}
       - name: Checkout
         uses: actions/checkout@v2
       - name: Cache west modules
@@ -52,44 +37,53 @@ jobs:
           cache-name: cache-zephyr-modules
         with:
           path: |
+            bootloader/
             modules/
             tools/
             zephyr/
-            bootloader/
             zmk/
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('${{ env.config-path }}/west.yml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - name: West Init
-        run: west init -l config
-      - name: West Update
+        timeout-minutes: 2
+        continue-on-error: true
+      - name: Initialize workspace (west init)
+        run: west init -l ${{ env.config-path }}
+      - name: Update modules (west update)
         run: west update
-      - name: West Zephyr export
+      - name: Export Zephyr CMake package (west zephyr-export)
         run: west zephyr-export
-      - name: West Build (${{ steps.variables.outputs.display-name }})
+      - name: Prepare variables
+        id: variables
         run: |
-          west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
-      - name: ${{ steps.variables.outputs.display-name }} DTS File
-        if: ${{ always() }}
+          if [ -n "${{ matrix.shield }}" ]; then
+            SHIELD_ARG="-DSHIELD=${{ matrix.shield }}"
+            ARTIFACT_NAME="${{ matrix.shield }}-${{ matrix.board }}-zmk"
+          else
+            SHIELD_ARG=
+            ARTIFACT_NAME="${{ matrix.board }}-zmk"
+          fi
+          echo ::set-output name=shield-arg::${SHIELD_ARG}
+          echo ::set-output name=artifact-name::${ARTIFACT_NAME}
+      - name: Build (west build)
         run: |
-          if [ -f "build/zephyr/${{ matrix.board }}.dts.pre.tmp" ]; then cat -n build/zephyr/${{ matrix.board }}.dts.pre.tmp; fi
-          if [ -f "build/zephyr/zephyr.dts" ]; then cat -n build/zephyr/zephyr.dts; fi
-      - name: ${{ steps.variables.outputs.display-name }} Kconfig file
-        run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
+          west build -s zmk/app -b ${{ matrix.board }} -- \
+          ${{ steps.variables.outputs.shield-arg }} \
+          -DZMK_CONFIG="${GITHUB_WORKSPACE}/${{ env.config-path }}" \
+          ${{ matrix.cmake-args }}
+      # - name: Generated DTS file
+      #   if: always()
+      #   run: cat -n build/zephyr/${{ matrix.board }}.dts.pre.tmp
       - name: Rename artifacts
         run: |
           mkdir build/artifacts
-          if [ -f build/zephyr/zmk.uf2 ]
-          then
-            cp build/zephyr/zmk.uf2 "build/artifacts/${{ steps.variables.outputs.artifact-name }}.uf2"
-          elif [ -f build/zephyr/zmk.hex ]
-          then
-            cp build/zephyr/zmk.hex "build/artifacts/${{ steps.variables.outputs.artifact-name }}.hex"
-          fi
-      - name: Archive (${{ steps.variables.outputs.display-name }})
+          [ -f build/zephyr/zmk.hex ] && cp build/zephyr/zmk.hex "build/artifacts/${{ steps.variables.outputs.artifact-name }}.hex"
+          [ -f build/zephyr/zmk.uf2 ] && cp build/zephyr/zmk.uf2 "build/artifacts/${{ steps.variables.outputs.artifact-name }}.uf2"
+      - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: firmware
+          name: "${{ steps.variables.outputs.artifact-name }}"
           path: build/artifacts
+
