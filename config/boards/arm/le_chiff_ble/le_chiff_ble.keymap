@@ -48,7 +48,7 @@
             #global-quick-tap;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30>;
         };
         hmls: homerow_mods_left_shift {
             compatible = "zmk,behavior-hold-tap";
@@ -59,7 +59,7 @@
             #global-quick-tap;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30>;
         };
         hmla: homerow_mods_left_altgr {
             compatible = "zmk,behavior-hold-tap";
@@ -70,7 +70,7 @@
             #global-quick-tap;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30>;
         };
         hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
@@ -171,7 +171,7 @@
         };
         /*combo_bootloader_right {*/
             /*timeout-ms = <30>;*/
-            /*key-positions = <26 27 28 29>;*/
+            /*key-positions = <27 28 29 30>;*/
             /*bindings = <&bootloader>;*/
         /*};*/
         combo_vm_exit {
@@ -191,7 +191,7 @@
         };
         combo_underscore {
             timeout-ms = <30>;
-            key-positions = <26 27>;
+            key-positions = <27 28>;
             bindings = <&kp UNDERSCORE>;
         };
         combo_double_quotes {
@@ -211,17 +211,17 @@
         };
         combo_excl {
             timeout-ms = <30>;
-            key-positions = <27 28>;
+            key-positions = <28 29>;
             bindings = <&kp EXCLAMATION>;
         };
         combo_pipe {
             timeout-ms = <30>;
-            key-positions = <26 27 28>;
+            key-positions = <27 28 29>;
             bindings = <&kp PIPE>;
         };
         combo_backslash {
             timeout-ms = <30>;
-            key-positions = <28 29>;
+            key-positions = <29 30>;
             bindings = <&kp BACKSLASH>;
         };
         combo_delete {
