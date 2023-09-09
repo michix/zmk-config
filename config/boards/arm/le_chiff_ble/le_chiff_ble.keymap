@@ -263,6 +263,7 @@
     &kp Z       &kp X       &kp C           &hmla RALT V     &kp B    &none    &kp N   &hmra RALT M     &kp COMMA       &kp DOT     &kp SLASH
                             &lt L_FKEYS SPC  &lt L_NUMSYM SPC           &lt L_NAV BSPC  &lt L_BLE BSPC
             >;
+			sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
 
         1_numsym {
@@ -272,15 +273,17 @@
     &kp LBRC    &kp LT      &kp GT      &kp RBRC    &none   &none   &kp DOT     &kp N1       &kp N2     &kp N3      &kp SLASH
                                         &none       &none           &kp N0      &none
             >;
+			sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
         2_nav {
             bindings = <
     &kp EXCL    &kp AT      &kp HASH    &kp DOLLAR  &kp PRCNT       &kp CARET   &kp AMPS    &kp ASTRK   &none       &none
-    &kp LC(LG(LEFT)) &kp LS(LG(LEFT)) &kp LS(LG(RIGHT)) &kp LC(LG(RIGHT)) &none     &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
+    &kp LC(LG(LEFT)) &kp LS(LG(LEFT)) &kp LS(LG(RIGHT)) &kp LC(LG(RIGHT)) &C_MUTE  &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
     &kp LG(LEFT)     &kp LS(LC(TAB))  &kp LC(TAB)   &kp LG(RIGHT)   &kp LA(TAB)  &none   &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &none
                                         &none       &none           &none       &none
             >;
+			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         3_fkeys {
