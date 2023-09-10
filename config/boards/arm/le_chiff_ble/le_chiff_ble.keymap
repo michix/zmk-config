@@ -259,10 +259,10 @@
         compatible = "zmk,keymap";
         0_querty {
             bindings = <
-    &lt L_MM Q    &kp W        &kp E            &kp R             &kp T                     &kp Y           &kp U           &kp I          &kp O        &kp P
-    &hml LALT A   &hml LGUI S  &hmls LSHIFT D   &hml LCTRL F      &kp G                     &kp H           &hmr RCTRL J    &hmrs RSHFT K  &hmr RGUI L  &hmr LALT SEMICOLON
-    &kp Z         &kp X        &kp C            &hmla RALT V      &kp B  &lt L_ENC_LR HOME  &kp N           &hmra RALT M    &kp COMMA      &kp DOT      &kp SLASH
-                               &lt L_FKEYS SPC  &lt L_NUMSYM SPC                            &lt L_NAV BSPC  &lt L_BLE BSPC
+    &kp Q        &kp W        &kp E            &kp R             &kp T                     &kp Y           &kp U           &kp I          &kp O        &kp P
+    &hml LALT A  &hml LGUI S  &hmls LSHIFT D   &hml LCTRL F      &kp G                     &kp H           &hmr RCTRL J    &hmrs RSHFT K  &hmr RGUI L  &hmr LALT SEMICOLON
+    &kp Z        &kp X        &kp C            &hmla RALT V      &kp B  &lt L_ENC_LR HOME  &kp N           &hmra RALT M    &kp COMMA      &kp DOT      &kp SLASH
+                              &lt L_FKEYS SPC  &lt L_NUMSYM SPC                            &lt L_NAV BSPC  &lt L_BLE BSPC
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
