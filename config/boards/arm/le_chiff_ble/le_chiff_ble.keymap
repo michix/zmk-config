@@ -15,7 +15,8 @@
 #define L_FKEYS 3
 #define L_BLE 4
 #define L_ENC_PG 5
-#define L_ENC_LR 5
+#define L_ENC_LR 6
+#define L_ENC_WS 7
 
 &mt {
     tapping_term_ms = <150>;
