@@ -335,4 +335,5 @@
             >;
             sensor-bindings = <&inc_dec_kp LC(LG(LEFT)) LC(LG(RIGHT))>;
         };
+    };
 };
