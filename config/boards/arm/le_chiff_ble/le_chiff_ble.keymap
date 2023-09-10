@@ -14,7 +14,8 @@
 #define L_NAV 2
 #define L_FKEYS 3
 #define L_BLE 4
-#define L_MM 5
+#define L_ENC_PG 5
+#define L_ENC_LR 5
 
 &mt {
     tapping_term_ms = <150>;
@@ -260,7 +261,7 @@
             bindings = <
     &lt L_MM Q    &kp W        &kp E            &kp R             &kp T                     &kp Y           &kp U           &kp I          &kp O        &kp P
     &hml LALT A   &hml LGUI S  &hmls LSHIFT D   &hml LCTRL F      &kp G                     &kp H           &hmr RCTRL J    &hmrs RSHFT K  &hmr RGUI L  &hmr LALT SEMICOLON
-    &kp Z         &kp X        &kp C            &hmla RALT V      &kp B  &lt L_NUMSYM HOME  &kp N           &hmra RALT M    &kp COMMA      &kp DOT      &kp SLASH
+    &kp Z         &kp X        &kp C            &hmla RALT V      &kp B  &lt L_ENC_LR HOME  &kp N           &hmra RALT M    &kp COMMA      &kp DOT      &kp SLASH
                                &lt L_FKEYS SPC  &lt L_NUMSYM SPC                            &lt L_NAV BSPC  &lt L_BLE BSPC
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
@@ -268,10 +269,10 @@
 
         1_numsym {
             bindings = <
-    &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &kp COMMA   &kp N7       &kp N8     &kp N9      &kp N0
-    &kp LPAR    &kp LBKT    &kp RBKT    &kp RPAR    &none           &kp MINUS   &kp N4       &kp N5     &kp N6      &kp PLUS
-    &kp LBRC    &kp LT      &kp GT      &kp RBRC    &none   &none   &kp DOT     &kp N1       &kp N2     &kp N3      &kp SLASH
-                                        &none       &none           &kp N0      &none
+    &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                     &kp COMMA   &kp N7       &kp N8     &kp N9      &kp N0
+    &kp LPAR    &kp LBKT    &kp RBKT    &kp RPAR    &none                      &kp MINUS   &kp N4       &kp N5     &kp N6      &kp PLUS
+    &kp LBRC    &kp LT      &kp GT      &kp RBRC    &none   &lt L_ENC_WS HOME  &kp DOT     &kp N1       &kp N2     &kp N3      &kp SLASH
+                                        &none       &none                      &kp N0      &none
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
@@ -304,14 +305,33 @@
             >;
         };
 
-        5_multimedia {
+        5_enc_pg_up_down {
             bindings = <
-    &none           &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &none           &none         &none   &none   &none   &none
+    &none           &none           &none           &none           &none           &none         &none   &none   &none   &none
     &none           &none           &none           &none           &none           &none         &none   &none   &none   &none
     &none           &none           &none           &none           &none   &none   &none         &none   &none   &none   &none
                                                     &none           &none           &none         &none
             >;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
-    };
+        6_enc_left_right {
+            bindings = <
+    &none           &none           &none           &none           &none           &none         &none   &none   &none   &none
+    &none           &none           &none           &none           &none           &none         &none   &none   &none   &none
+    &none           &none           &none           &none           &none   &none   &none         &none   &none   &none   &none
+                                                    &none           &none           &none         &none
+            >;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
+        };
+
+        7_enc_workspace_left_right {
+            bindings = <
+    &none           &none           &none           &none           &none           &none         &none   &none   &none   &none
+    &none           &none           &none           &none           &none           &none         &none   &none   &none   &none
+    &none           &none           &none           &none           &none   &none   &none         &none   &none   &none   &none
+                                                    &none           &none           &none         &none
+            >;
+            sensor-bindings = <&inc_dec_kp LC(LG(LEFT)) LC(LG(RIGHT))>;
+        };
 };
