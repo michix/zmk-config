@@ -41,7 +41,6 @@
     behaviors {
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LEFT";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <150>;
@@ -52,7 +51,6 @@
         };
         hmls: homerow_mods_left_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LEFT_SHIFT";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <150>;
@@ -63,7 +61,6 @@
         };
         hmla: homerow_mods_left_altgr {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LEFT_ALTGR";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <150>;
@@ -74,7 +71,6 @@
         };
         hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_RIGHT";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <150>;
@@ -85,7 +81,6 @@
         };
         hmrs: homerow_mods_right_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_RIGHT_SHIFT";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <150>;
@@ -96,7 +91,6 @@
         };
         hmra: homerow_mods_right_altgr {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_RIGHT_ALTGR";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <150>;
