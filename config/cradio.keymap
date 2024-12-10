@@ -42,7 +42,7 @@
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-unless-interrupted";
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             #global-quick-tap;
@@ -52,7 +52,7 @@
         hmls: homerow_mods_left_shift {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-unless-interrupted";
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             #global-quick-tap;
@@ -62,7 +62,7 @@
         hmla: homerow_mods_left_altgr {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-unless-interrupted";
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             #global-quick-tap;
@@ -72,7 +72,7 @@
         hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-unless-interrupted";
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             #global-quick-tap;
@@ -82,7 +82,7 @@
         hmrs: homerow_mods_right_shift {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-unless-interrupted";
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             #global-quick-tap;
@@ -92,7 +92,7 @@
         hmra: homerow_mods_right_altgr {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-unless-interrupted";
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             #global-quick-tap;
