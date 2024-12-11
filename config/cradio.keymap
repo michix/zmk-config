@@ -250,18 +250,18 @@
 
         3_fkeys {
             bindings = <
-&none         &none         &none           &none             &sys_reset   &sys_reset   &kp F7  &kp F8  &kp F9  &kp F12
-&sk LEFT_ALT  &sk LEFT_GUI  &sk LEFT_SHIFT  &sk LEFT_CONTROL  &bootloader  &bootloader  &kp F4  &kp F5  &kp F8  &kp F11
-&none         &none         &none           &none             &none        &none        &kp F1  &kp F2  &kp F3  &kp F10
+    &none         &none         &none           &none             &sys_reset   &mmc SCRL_LEFT  &mmc SCRL_UP    &mmc SCRL_DOWN  &mmc SCRL_RIGHT  &none
+    &sk LEFT_ALT  &sk LEFT_GUI  &sk LEFT_SHIFT  &sk LEFT_CONTROL  &none        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT  &none
+    &none         &none         &none           &none             &bootloader  &none           &mkp LCLK       &mkp RCLK       &mkp MKCLK       &none
                                       &none            &none       &none       &none
             >;
         };
 
         4_ble {
             bindings = <
-&kp C_MUTE    &none         &kp C_VOL_DN  &kp C_VOL_UP  &bt BT_CLR    &sys_reset   &kp F7  &kp F8  &kp F9  &kp F12
-&bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bootloader  &kp F4  &kp F5  &kp F8  &kp F11
-&none         &none         &none         &out OUT_USB  &bootloader   &none        &kp F1  &kp F2  &kp F3  &kp F10
+  &kp C_MUTE    &none         &kp C_VOL_DN  &kp C_VOL_UP  &bt BT_CLR    &sys_reset   &kp F7  &kp F8  &kp F9  &kp F12
+  &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &none        &kp F4  &kp F5  &kp F8  &kp F11
+  &none         &none         &none         &out OUT_USB  &none         &bootloader  &kp F1  &kp F2  &kp F3  &kp F10
                                        &none           &none           &none         &none
             >;
         };
