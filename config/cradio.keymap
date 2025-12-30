@@ -40,6 +40,14 @@
 };
 
 / {
+    macros {
+        hyper_macro_l: hyper_macro_l {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LSHIFT &kp LALT &kp LGUI &kp LCTRL>;
+        };
+    };
+
     behaviors {
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
@@ -228,9 +236,9 @@
         compatible = "zmk,keymap";
         0_qwerty {
             bindings = <
-&hml LC(LA(LG(LS()))) Q  &kp W        &kp E          &kp R         &kp T  &kp Y  &kp U         &kp I         &kp O        &hmr RC(RA(RG(RS()))) P
+&hml &hyper_macro_l Q     &kp W        &kp E          &kp R         &kp T  &kp Y  &kp U         &kp I         &kp O        &hmr &hyper_macro_l P
 &hml LALT A  &hml LGUI S  &hml LSHIFT D  &hml LCTRL F  &kp G  &kp H  &hmr RCTRL J  &hmr RSHFT K  &hmr RGUI L  &hmr LALT SEMICOLON
-&lt L_MM z   &kp X        &kp C          &hml RALT V   &kp B  &kp N  &hmr RALT M   &kp COMMA     &kp DOT      &kp SLASH
+&lt L_MM Z   &kp X        &kp C          &hml RALT V   &kp B  &kp N  &hmr RALT M   &kp COMMA     &kp DOT      &kp SLASH
                     &lt L_FKEYS SPC  &lt L_NUMSYM SPC           &lt L_NAV BSPC  &lt L_BLE BSPC
             >;
         };
