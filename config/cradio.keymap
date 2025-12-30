@@ -18,6 +18,8 @@
 #define L_BLE 5
 #define L_MM 6
 
+#define HYPR LC(LA(LG(LS())))
+
 &mt {
     tapping_term_ms = <150>;
     flavor = "tap-preferred";
@@ -228,9 +230,9 @@
         compatible = "zmk,keymap";
         0_qwerty {
             bindings = <
-&lt L_MM Q   &kp W        &kp E          &kp R         &kp T  &kp Y  &kp U         &kp I         &kp O        &kp P
+&hml HYPR Q  &kp W        &kp E          &kp R         &kp T  &kp Y  &kp U         &kp I         &kp O        &hmr HYPR P
 &hml LALT A  &hml LGUI S  &hml LSHIFT D  &hml LCTRL F  &kp G  &kp H  &hmr RCTRL J  &hmr RSHFT K  &hmr RGUI L  &hmr LALT SEMICOLON
-&kp Z        &kp X        &kp C          &hml RALT V   &kp B  &kp N  &hmr RALT M   &kp COMMA     &kp DOT      &kp SLASH
+&lt L_MM z   &kp X        &kp C          &hml RALT V   &kp B  &kp N  &hmr RALT M   &kp COMMA     &kp DOT      &kp SLASH
                     &lt L_FKEYS SPC  &lt L_NUMSYM SPC           &lt L_NAV BSPC  &lt L_BLE BSPC
             >;
         };
