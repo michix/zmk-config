@@ -44,7 +44,7 @@
         hyper_macro_l: hyper_macro_l {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LSHIFT &kp LALT &kp LGUI &kp LCTRL>;
+            bindings = <&macro_press &kp LSHIFT &kp LALT &kp LGUI &kp LCTRL>;
         };
     };
 
