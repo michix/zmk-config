@@ -17,6 +17,7 @@
 #define L_FKEYS 4
 #define L_BLE 5
 #define L_MM 6
+#define HYPER LC(LS(LA(LGUI)))
 
 &mt {
     tapping_term_ms = <150>;
@@ -40,14 +41,6 @@
 };
 
 / {
-    macros {
-        hyper_macro_l: hyper_macro_l {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHIFT &kp LALT &kp LGUI &kp LCTRL>;
-        };
-    };
-
     behaviors {
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
@@ -236,7 +229,7 @@
         compatible = "zmk,keymap";
         0_qwerty {
             bindings = <
-&hml &hyper_macro_l Q     &kp W        &kp E          &kp R         &kp T  &kp Y  &kp U         &kp I         &kp O        &hmr &hyper_macro_l P
+&hml HYPER Q     &kp W        &kp E          &kp R         &kp T  &kp Y  &kp U         &kp I         &kp O        &hmr HYPER P
 &hml LALT A  &hml LGUI S  &hml LSHIFT D  &hml LCTRL F  &kp G  &kp H  &hmr RCTRL J  &hmr RSHFT K  &hmr RGUI L  &hmr LALT SEMICOLON
 &lt L_MM Z   &kp X        &kp C          &hml RALT V   &kp B  &kp N  &hmr RALT M   &kp COMMA     &kp DOT      &kp SLASH
                     &lt L_FKEYS SPC  &lt L_NUMSYM SPC           &lt L_NAV BSPC  &lt L_BLE BSPC
