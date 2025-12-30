@@ -7,7 +7,7 @@ west \
   build \
   --pristine \
   -d build/left \
-  -b nice_nano_v2 \
+  -b nice_nano \
   -- \
   -DSHIELD=cradio_left \
   -DZMK_CONFIG=/home/mjaeger/zmk-config/zmk-config-sweep/config \
